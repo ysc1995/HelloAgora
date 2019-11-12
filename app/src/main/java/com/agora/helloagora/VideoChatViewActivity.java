@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -232,5 +233,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
             mRtcEngine.setLocalVoiceReverbPreset(0);
         }
         isVoiceChanged = !isVoiceChanged;
+
+        //mRemoteContainer.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));
     }
 }
