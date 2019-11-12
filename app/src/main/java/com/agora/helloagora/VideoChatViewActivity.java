@@ -29,7 +29,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
     private SurfaceView mRemoteView;
     private FrameLayout mLocalContainer;
     private SurfaceView mLocalView;
-    private ImageView mCallBtn, mMuteBtn, mSwitchCameraBtn;
+    private ImageView mCallBtn, mMuteBtn;
     private boolean isCalling = true;
     private boolean isMuted = false;
 
@@ -82,7 +82,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +93,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
                 checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
             initEngineAndJoinChannel();
         }
-
     }
 
     private void initUI() {
@@ -103,8 +101,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
         mCallBtn = findViewById(R.id.btn_call);
         mMuteBtn = findViewById(R.id.btn_mute);
-        mSwitchCameraBtn = findViewById(R.id.btn_switch_camera);
-
     }
 
     private void initEngineAndJoinChannel() {
@@ -146,8 +142,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
         mRtcEngine.joinChannel(getString(R.string.temp_token), "Andrew", "Extra Optional Data", 0);
     }
 
-
-
     private boolean checkSelfPermission(String permission, int requestCode) {
         if (ContextCompat.checkSelfPermission(this, permission) !=
                 PackageManager.PERMISSION_GRANTED) {
@@ -156,8 +150,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
 
     private void onRemoteUserLeft() {
         removeRemoteVideo();
