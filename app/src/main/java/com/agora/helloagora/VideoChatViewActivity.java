@@ -18,7 +18,6 @@ import androidx.core.content.ContextCompat;
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
 import io.agora.rtc.video.VideoCanvas;
-import io.agora.rtc.video.VideoEncoderConfiguration;
 
 public class VideoChatViewActivity extends AppCompatActivity {
     private static final String TAG = VideoChatViewActivity.class.getName();
@@ -49,7 +48,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(VideoChatViewActivity.this, "User: " + uid + "join!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(VideoChatViewActivity.this, "User: " + uid + " join!", Toast.LENGTH_LONG).show();
                     Log.i("agora","Join channel success, uid: " + (uid & 0xFFFFFFFFL));
                 }
             });
@@ -76,6 +75,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    Toast.makeText(VideoChatViewActivity.this, "User: " + uid + " left the room.", Toast.LENGTH_LONG).show();
                     Log.i("agora","User offline, uid: " + (uid & 0xFFFFFFFFL));
                     onRemoteUserLeft();
                 }
