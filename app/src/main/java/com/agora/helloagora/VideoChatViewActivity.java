@@ -1,5 +1,15 @@
 package com.agora.helloagora;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -7,19 +17,7 @@ import androidx.core.content.ContextCompat;
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
 import io.agora.rtc.video.VideoCanvas;
-
 import io.agora.rtc.video.VideoEncoderConfiguration;
-
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.SurfaceView;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 public class VideoChatViewActivity extends AppCompatActivity {
     private static final String TAG = VideoChatViewActivity.class.getName();
@@ -178,8 +176,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
         mRemoteView.setTag(uid);
 
     }
-
-
 
     @Override
     protected void onDestroy() {
