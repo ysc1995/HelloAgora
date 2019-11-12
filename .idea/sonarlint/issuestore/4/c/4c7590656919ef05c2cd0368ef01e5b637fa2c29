@@ -1,12 +1,8 @@
 
-]squid:S3398‹">Move this method into the anonymous class declared at line 87.(Ù¼–é8¨Øåå-
-ysquid:UselessImportCheck"IRemove this unused import 'io.agora.rtc.video.VideoEncoderConfiguration'.(×áøÿÿÿÿ8¾ãìäå-
-jsquid:CommentedOutCodeLine£"<This block of commented-out lines of code should be removed.(È·Ì×8®Áìåå-
-fsquid:S00112œ"FDefine and throw a dedicated exception instead of using a generic one.(ß°«Å8•¢–åå-
-~squid:CallToDeprecatedMethodh"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¥Ò—ûÿÿÿÿ8í˜åå-
-osquid:CommentedOutCodeLine¥"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8®Áìåå-
-bsquid:S3398€">Move this method into the anonymous class declared at line 87.(‘Ö°Æûÿÿÿÿ8—Ïàåå-
-Ÿsquid:S1186®"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÌÒøP8¾§¶èå-
- squid:S1186±"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(„ü»8 ·èå-
-¥squid:S1186´"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(„®úùÿÿÿÿ8Ì·èå-
-isquid:S1192_"FDefine a constant instead of duplicating this literal "agora" 3 times.(œ€½ûÿÿÿÿ8í˜åå-
+]squid:S3398£">Move this method into the anonymous class declared at line 44.(Ù¼–é8ÚğÎóå-
+esquid:S00112v"FDefine and throw a dedicated exception instead of using a generic one.(ß°«Å8°ØËóå-
+ysquid:UselessImportCheck"IRemove this unused import 'io.agora.rtc.video.VideoEncoderConfiguration'.(×áøÿÿÿÿ8³µóöå-
+~squid:CallToDeprecatedMethod>"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¥Ò—ûÿÿÿÿ8ÚğÎóå-
+bsquid:S3398˜">Move this method into the anonymous class declared at line 44.(‘Ö°Æûÿÿÿÿ8ÚğÎóå-
+Dsquid:S1659 "&Declare "mMuteBtn" on a separate line.(®×8ª‘¾óå-
+isquid:S11925"FDefine a constant instead of duplicating this literal "agora" 3 times.(œ€½ûÿÿÿÿ8ÚğÎóå-
