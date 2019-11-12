@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -45,6 +46,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    Toast.makeText(VideoChatViewActivity.this, "User: " + uid + "join!", Toast.LENGTH_LONG).show();
                     Log.i("agora","Join channel success, uid: " + (uid & 0xFFFFFFFFL));
                 }
             });
