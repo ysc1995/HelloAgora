@@ -30,6 +30,8 @@ public class VideoChatViewActivity extends AppCompatActivity {
     private FrameLayout mLocalContainer;
     private SurfaceView mLocalView;
     private ImageView mCallBtn, mMuteBtn, mSwitchCameraBtn;
+    private boolean isCalling = true;
+    private boolean isMuted = false;
 
     // Ask for Android device permissions at runtime.
     private static final String[] REQUESTED_PERMISSIONS = {
@@ -152,7 +154,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, REQUESTED_PERMISSIONS, requestCode);
             return false;
         }
-
         return true;
     }
 
@@ -182,9 +183,9 @@ public class VideoChatViewActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //if (!mCallEnd) {
+        if (isCalling) {
             leaveChannel();
-        //}
+        }
         RtcEngine.destroy();
     }
 
@@ -194,11 +195,43 @@ public class VideoChatViewActivity extends AppCompatActivity {
     }
 
     public void onCallClicked(View view) {
+        if (isCalling) {
+            finishCalling();
+            isCalling = false;
+            mCallBtn.setImageResource(R.drawable.btn_startcall);
+        }else {
+            startCalling();
+            isCalling = true;
+            mCallBtn.setImageResource(R.drawable.btn_endcall);
+        }
+    }
+
+    private void finishCalling() {
+        removeLocalVideo();
+        removeRemoteVideo();
+        leaveChannel();
+    }
+
+    private void removeLocalVideo() {
+        if (mLocalView != null) {
+            mLocalContainer.removeView(mLocalView);
+        }
+        mLocalView = null;
+    }
+
+    private void startCalling() {
+        setupLocalVideo();
+        joinChannel();
     }
 
     public void onSwitchCameraClicked(View view) {
+        mRtcEngine.switchCamera();
     }
 
     public void onLocalAudioMuteClicked(View view) {
+        isMuted = !isMuted;
+        mRtcEngine.muteLocalAudioStream(isMuted);
+        int res = isMuted ? R.drawable.btn_mute : R.drawable.btn_unmute;
+        mMuteBtn.setImageResource(res);
     }
 }
