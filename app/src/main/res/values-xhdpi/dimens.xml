@@ -7,5 +7,5 @@
 
     <!-- buttons -->
     <dimen name="control_bottom_margin">24dp</dimen>
-    <dimen name="control_bottom_horizontal_margin">30dp</dimen>
+    <dimen name="control_bottom_horizontal_margin">25dp</dimen>
 </resources>

@@ -32,6 +32,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
     private ImageView mCallBtn, mMuteBtn;
     private boolean isCalling = true;
     private boolean isMuted = false;
+    private boolean isVoiceChanged = false;
 
     // Ask for Android device permissions at runtime.
     private static final String[] REQUESTED_PERMISSIONS = {
@@ -225,5 +226,14 @@ public class VideoChatViewActivity extends AppCompatActivity {
         mRtcEngine.muteLocalAudioStream(isMuted);
         int res = isMuted ? R.drawable.btn_mute : R.drawable.btn_unmute;
         mMuteBtn.setImageResource(res);
+    }
+
+    public void onSwitchVoiceClicked(View view) {
+        if (!isVoiceChanged) {
+            mRtcEngine.setLocalVoiceChanger(3);
+        }else {
+            mRtcEngine.setLocalVoiceReverbPreset(0);
+        }
+        isVoiceChanged = !isVoiceChanged;
     }
 }
