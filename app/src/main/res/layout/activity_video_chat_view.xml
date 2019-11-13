@@ -56,19 +56,11 @@
         android:layout_marginBottom="@dimen/control_bottom_margin">
 
         <ImageView
-            android:id="@+id/center"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:scaleType="centerCrop"/>
-
-        <ImageView
             android:id="@+id/btn_call"
             android:layout_width="@dimen/call_button_size"
             android:layout_height="@dimen/call_button_size"
-            android:layout_toRightOf="@id/center"
-            android:layout_toEndOf="@id/center"
             android:onClick="onCallClicked"
+            android:layout_centerInParent="true"
             android:src="@drawable/btn_endcall"
             android:scaleType="centerCrop"/>
 
@@ -88,8 +80,8 @@
             android:id="@+id/btn_mute"
             android:layout_width="@dimen/other_button_size"
             android:layout_height="@dimen/other_button_size"
-            android:layout_toLeftOf="@id/center"
-            android:layout_toStartOf="@id/center"
+            android:layout_toLeftOf="@id/btn_call"
+            android:layout_toStartOf="@id/btn_call"
             android:layout_marginRight="@dimen/control_bottom_horizontal_margin"
             android:layout_centerVertical="true"
             android:onClick="onLocalAudioMuteClicked"
@@ -107,6 +99,18 @@
             android:layout_centerVertical="true"
             android:onClick="onSwitchVoiceClicked"
             android:src="@drawable/btn_change_voice"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/btn_shake"
+            android:layout_width="@dimen/other_button_size"
+            android:layout_height="@dimen/other_button_size"
+            android:layout_toRightOf="@id/btn_switch_camera"
+            android:layout_toEndOf="@id/btn_switch_camera"
+            android:layout_marginLeft="@dimen/control_bottom_horizontal_margin"
+            android:layout_centerVertical="true"
+            android:onClick="onRemoteShackClicked"
+            android:src="@drawable/btn_shack"
             android:scaleType="centerCrop"/>
     </RelativeLayout>
 

@@ -229,11 +229,15 @@ public class VideoChatViewActivity extends AppCompatActivity {
     public void onSwitchVoiceClicked(View view) {
         if (!isVoiceChanged) {
             mRtcEngine.setLocalVoiceChanger(3);
+            Toast.makeText(this, "Voice changer activate", Toast.LENGTH_SHORT).show();
         }else {
+            Toast.makeText(this, "Voice back to normal", Toast.LENGTH_SHORT).show();
             mRtcEngine.setLocalVoiceReverbPreset(0);
         }
         isVoiceChanged = !isVoiceChanged;
+    }
 
-        //mRemoteContainer.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));
+    public void onRemoteShackClicked(View view) {
+        mRemoteContainer.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));
     }
 }
