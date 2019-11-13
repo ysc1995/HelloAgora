@@ -29,7 +29,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
     private SurfaceView mRemoteView;
     private FrameLayout mLocalContainer;
     private SurfaceView mLocalView;
-    private ImageView mCallBtn, mMuteBtn;
+    private ImageView mCallBtn, mMuteBtn, mSwitchVoiceBtn;
     private boolean isCalling = true;
     private boolean isMuted = false;
     private boolean isVoiceChanged = false;
@@ -86,7 +86,10 @@ public class VideoChatViewActivity extends AppCompatActivity {
         @Override
         public void onStreamMessage(int uid, int streamId, byte[] data) {
             super.onStreamMessage(uid, streamId, data);
-            performAnimation();
+            //do shacking when receive 1
+            if (data.length == 1 && data[0] == 1) {
+                performAnimation();
+            }
         }
 
         @Override
@@ -114,6 +117,7 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
         mCallBtn = findViewById(R.id.btn_call);
         mMuteBtn = findViewById(R.id.btn_mute);
+        mSwitchVoiceBtn = findViewById(R.id.btn_switch_voice);
     }
 
     private void initEngineAndJoinChannel() {
@@ -198,10 +202,12 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
     public void onCallClicked(View view) {
         if (isCalling) {
+            //finish current call
             finishCalling();
             isCalling = false;
             mCallBtn.setImageResource(R.drawable.btn_startcall);
         }else {
+            //start the call
             startCalling();
             isCalling = true;
             mCallBtn.setImageResource(R.drawable.btn_endcall);
@@ -239,16 +245,21 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
     public void onSwitchVoiceClicked(View view) {
         if (!isVoiceChanged) {
+            //start voice change to little girl, can be changed to different voices
             mRtcEngine.setLocalVoiceChanger(3);
             Toast.makeText(this, "Voice changer activate", Toast.LENGTH_SHORT).show();
         }else {
+            //disable voice change
             Toast.makeText(this, "Voice back to normal", Toast.LENGTH_SHORT).show();
             mRtcEngine.setLocalVoiceReverbPreset(0);
         }
+        int res = !isVoiceChanged ? R.drawable.ic_change_voice_24dp : R.drawable.ic_change_voice_normal_24dp;
+        mSwitchVoiceBtn.setImageResource(res);
         isVoiceChanged = !isVoiceChanged;
     }
 
     public void onRemoteShackClicked(View view) {
+        //send message to the other user with data = {1}
         mRtcEngine.sendStreamMessage(mRtcEngine.createDataStream(true, true), new byte[]{1});
     }
 

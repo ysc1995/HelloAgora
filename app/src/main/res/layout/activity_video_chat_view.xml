@@ -90,7 +90,7 @@
 
 
         <ImageView
-            android:id="@+id/switch_voice"
+            android:id="@+id/btn_switch_voice"
             android:layout_width="@dimen/other_button_size"
             android:layout_height="@dimen/other_button_size"
             android:layout_toLeftOf="@id/btn_mute"
