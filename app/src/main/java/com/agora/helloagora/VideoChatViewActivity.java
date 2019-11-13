@@ -82,6 +82,17 @@ public class VideoChatViewActivity extends AppCompatActivity {
                 }
             });
         }
+
+        @Override
+        public void onStreamMessage(int uid, int streamId, byte[] data) {
+            super.onStreamMessage(uid, streamId, data);
+            performAnimation();
+        }
+
+        @Override
+        public void onStreamMessageError(int uid, int streamId, int error, int missed, int cached) {
+            super.onStreamMessageError(uid, streamId, error, missed, cached);
+        }
     };
 
     @Override
@@ -238,6 +249,10 @@ public class VideoChatViewActivity extends AppCompatActivity {
     }
 
     public void onRemoteShackClicked(View view) {
+        mRtcEngine.sendStreamMessage(mRtcEngine.createDataStream(true, true), new byte[]{1});
+    }
+
+    public void performAnimation() {
         mRemoteContainer.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));
     }
 }
