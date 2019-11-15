@@ -1,5 +1,5 @@
 # HelloAgora
-Use this guide to quickly start a basic call with the Agora SDK for Android. This Application contains basic video call functionalities (switch camera, mute/unmute local audio and join/leave channel), voice changer and remote screen shacking. 
+This doc contains instructions for how to start a basic call using the Agora SDK for Android. This application provides basic video call functionalities (switch camera, mute/unmute local audio and join/leave channel), voice changer and remote screen shacking. 
 
 # Prerequisites
 * Android Studio 3.0 or later
@@ -11,7 +11,7 @@ Use this guide to quickly start a basic call with the Agora SDK for Android. Thi
 In this section, we will create an Android project, integrate the SDK into the project, and add the Android device permissions to prepare the development environment.
 
 ## Create an Android project
-Let's build a Android project from scratch. Skip this part if you already have a project.
+If you already have a project, you can skip to the next section. Otherwise, follow the directions below to build an Android project from scratch.
 
 1. Open **Android Studio** and click **Start a new Android Studio project**.
 
@@ -87,7 +87,7 @@ Add the following line in the app/proguard-rules.pro file to prevent code obfusc
 ```
 
 # Implement basic video call function
-This Session will introduce how to use Agora SDK to make a basic one-to-one video call. 
+This section will introduce how to use Agora SDK to make a basic one-to-one video call. 
 
 ### 1. Create the UI
 
@@ -374,7 +374,7 @@ private void leaveChannel() {
 ```
 
 # Add more functions 
-In this session, we will add more functions in the app: mute/unmute local audio, switch the camera direction, voice change and remote screen shacking.
+In this section, we will add more functions in the app: mute/unmute local audio, switch the camera direction, voice change and remote screen shacking.
 
 ## 1. Add buttons into the UI
 Add a mute button, a switch camera button, a screen shacking button and a vioce changer button below the call button we added in the previous step in the _activity_video_chat_view.xml_ file .
@@ -533,7 +533,7 @@ public void onRemoteShackClicked(View view) {
 ```
 
 # More Improvements
-In this session, we will add some improvements to make the app more robust. 
+In this section, we will add some improvements to make the app more robust. 
 
 ## Screen rotation
 Add _configChanges_ in the _Manifest_ file to prevent activity been destroyed from screen rotation.
