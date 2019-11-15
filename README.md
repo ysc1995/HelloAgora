@@ -578,4 +578,6 @@ rtcEngine.setInEarMonitoringVolume(80);
 ```
 
 # Run the project
-Run the project on your Android device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.
+You can run the project on two Android devices to make one-to-one video call. You can see both the local and remote video views on each device. When you successfully start a one-to-one video call in the app, you should be able to switch local camera, mute/unmute local audio, change voice and make a remote screen shack.
+
+*If the local video view is black and cannot start the call, double check if the temporary token is expired. 
