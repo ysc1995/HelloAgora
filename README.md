@@ -318,6 +318,13 @@ After initializing the RtcEngine object and setting the local video view (for a 
 
 For more details on the parameter settings, see [joinChanne](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
+```javascript
+private void joinChannel() {
+        // Join a channel with a token.
+        mRtcEngine.joinChannel(getString(R.string.temp_token), "Andrew", "Extra Optional Data", 0);
+    }
+```
+
 ### 6. Set up the remote video view
 
 In a video call, you should be able to see other users too. This is achieved by calling the setupRemoteVideo method after joining the channel.
