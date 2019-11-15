@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">HelloAgora</string>
-    <string name="agora_app_id">63de42a061314414acf0654108acd159</string>
-    <string name="temp_token">00663de42a061314414acf0654108acd159IAATvBu0CEjynqtgrMxOZahZBWwHzL+qAntUEYVy1JJYRFEWHmYAAAAAEAAHxppY8P/MXQEAAQDx/8xd</string>
+    <string name="agora_app_id">#YOUR APP ID#</string>
+    <string name="temp_token">#YOUR TEMP TOKEN#</string>
 </resources>
